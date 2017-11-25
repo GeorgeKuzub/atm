@@ -103,7 +103,8 @@ public class Atm {
 
         actualBalance = user.getAccountBalance();
         if (actualBalance == 0) {
-            System.out.println("You can't make any withdraw since your current balance is '0'.");
+            System.out.println("You can't make any withdraw since your current balance is '0'. \n");
+            return;
         }
 
         do {

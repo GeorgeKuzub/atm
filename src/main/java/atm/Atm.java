@@ -102,6 +102,9 @@ public class Atm {
         long actualBalance;
 
         actualBalance = user.getAccountBalance();
+        if (actualBalance == 0) {
+            System.out.println("You can't make any withdraw since your current balance is '0'.");
+        }
 
         do {
             System.out.println("Enter the amount to withdraw: ");
@@ -110,10 +113,9 @@ public class Atm {
             if (amount < 0) {
                 System.out.println("Amount must be greater than zero.");
             } else if  (amount > 0) {
-                System.out.printf("Amount must be less than current " +
+                System.out.printf("Amount must be less or equal than current " +
                         "balance of %d.%n", actualBalance);
             }
-
         } while (amount < 0 || amount > actualBalance);
 
         user.addAccountTransaction(-1*amount); // the negative amount to lead to withdraw from balance

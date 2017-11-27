@@ -1,5 +1,7 @@
-package atm;
+package atm.logic;
 
+
+import atm.Util;
 
 public class User {
     public final static String DEFAULT_PIN = "1111";
@@ -8,11 +10,13 @@ public class User {
     private String cardId;
     private byte hash[];
     private Account userAccount;
+    private String pin;
 
     public User (String name, String pin, Bank bank) {
         this.name = name;
         this.cardId = bank.issueNewCardNumber();
         this.hash = Util.generateMD5Hash(pin);
+        this.pin = pin;
 
         System.out.printf("User %s with card numer %s created with default pin code %s.%n",
                 name, cardId, DEFAULT_PIN);

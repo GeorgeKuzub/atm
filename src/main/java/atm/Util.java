@@ -1,6 +1,5 @@
 package atm;
 
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -15,7 +14,7 @@ public class Util {
                     + e.getMessage());
             System.exit(2);
         } catch (Error e) {
-            System.err.println("Something happened unexpectedly during generating hash: ");
+            System.err.println("Something happened unexpectedly during generating hash.");
             e.printStackTrace();
             System.exit(3);
         }
@@ -35,5 +34,14 @@ public class Util {
         }
 
         return false;
+    }
+
+    public static boolean isItDigit(String s) {
+        if (s.length() > 1) {
+            return false;
+        }
+
+        char code = s.charAt(0);
+        return code >= '0' && code <= '9';
     }
 }

@@ -1,4 +1,4 @@
-package atm;
+package atm.logic;
 
 import java.util.ArrayList;
 import java.util.List;

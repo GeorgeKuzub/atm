@@ -1,4 +1,4 @@
-package atm;
+package atm.logic;
 
 import java.time.LocalDateTime;
 
